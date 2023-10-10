@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merger Assignment-7</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(173, 76, 242);
+      }
+
+      .flex-container > div {
+        /*div children of the flex container*/
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+      }
+
+      /* Responsive layout */
+      @media (max-width: 600px) {
+        .flex-container {
+          flex-direction: column;
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <h2
+      style="
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(14, 42, 202);
+        margin: 10px;
+      " 
+    >
+      Sangeetha Baddam builds a merger
+    </h2>
+    <input
+      style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+      type="text"
+      placeholder="Enter the value"
+      id="input"
+    />
+    <br />
+    <br />
+    <div class="flex-container" id="target">
+      <div class="merger">row item 1</div>
+      <div class="merger">row item 2</div>
+      <div class="merger">row item 3</div>
+    </div>
+
+    <p>
+      Press the button to create an new element of type div and then add it to
+      the container.
+    </p>
+    <button type="button" class="btn btn-success" onclick="makeDiv()">
+      Add end
+    </button>
+    <button type="button" class="btn btn-warning" onclick="addFront()">
+      Add front
+    </button>
+    <button type="button" class="btn btn-danger" onclick="remove()">
+      Remove
+    </button>
+    <button type="button" class="btn btn-primary" onclick="swap()">Swap</button>
+  </body>
+  <script>
+    function makeDiv() {
+      let value = document.getElementById("input").value;
+      
+      let element = document.createElement("div");
+      element.innerHTML = value;
+      element.className = "merger";
+
+      let container = document.getElementById("target");
+      container.appendChild(element);
+    }
+
+    function remove() {
+      let mergerItems = document.getElementsByClassName("merger");
+      let length = mergerItems.length;
+      if (length > 0) {
+        let index = Math.floor(length / 2);
+        mergerItems[index].remove();
+      }
+    }
+
+    function addFront() {
+      let value = document.getElementById("input").value;
+
+      
+      let element = document.createElement("div");
+      element.innerHTML = value;
+      element.className = "merger";
+
+      
+      let container = document.getElementById("target");
+      container.insertBefore(element, container.firstChild);
+    }
+
+    function swap() {
+      let mergerItems = document.getElementsByClassName("merger");
+      let length = mergerItems.length;
+      let mergerItem =
+        document.getElementsByClassName("merger")[
+          Math.floor(Math.random() * length)
+        ];
+      let container = document.getElementById("target");
+      container.insertBefore(mergerItem, container.firstChild);
+    }
+  </script>
+</html>
