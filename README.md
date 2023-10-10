@@ -3,5 +3,7 @@
 An assignment on java script modifying the DOM and using anonymous callback functions.
 
 <a href="https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-s566810/pirate">Pirates Hosted</a>
+<br>
 <a href="https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-s566810/react">React Hosted</a>
+<br>
 <a href="https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-s566810/merger">Merger Hosted</a>
